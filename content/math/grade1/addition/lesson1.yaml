@@ -1,0 +1,57 @@
+lesson:
+  id: math-g1-add-1
+  title: "Addition Facts to 10"
+  grade: 1
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - addition_concept
+    - counting_to_20
+
+  teaches:
+    - addition_facts_to_10
+    - counting_on_strategy
+    - commutative_property_intro
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-g1-add-1-intro.mp4"
+        transcript: "Let's become addition experts! We'll learn addition facts to 10 and discover smart strategies. Did you know 3 + 5 is the same as 5 + 3? That's a helpful math trick!"
+        subtitles: true
+
+    - type: interactive
+      component: "AdditionStrategies"
+      props:
+        max_sum: 10
+        strategies: ["counting_on", "making_ten", "doubles"]
+        show_number_line: true
+        interactive_practice: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.25
+        count: 10
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive 1st grade math teacher helping with addition to 10.
+      Teach strategies like counting on (start at 7, count up 2 more).
+      Introduce the idea that 4 + 3 = 3 + 4 (order doesn't matter).
+      Use clear examples and encourage mental math.
+      Keep language simple for 6-7 year olds.
+      Example: "When adding 8 + 2, start at 8 and count up: 9, 10!"
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

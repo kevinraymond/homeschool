@@ -1,0 +1,59 @@
+lesson:
+  id: math-k-add-2
+  title: "Adding with Objects (Sums to 10)"
+  grade: 0
+  subject: math
+  unit: basic-addition
+
+  prerequisites:
+    - addition_concept
+    - sums_to_5
+
+  teaches:
+    - addition_to_10
+    - using_fingers_to_add
+    - number_sentences
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-add-2-intro.mp4"
+        transcript: "You're great at adding small numbers! Now let's add bigger groups - all the way to 10! You can use your fingers, draw pictures, or count objects. Let's go!"
+        subtitles: true
+
+    - type: interactive
+      component: "AdditionVisualizer"
+      props:
+        max_sum: 10
+        show_objects: true
+        show_fingers: true
+        objects: ["blocks", "stars", "fish"]
+        animation: "combine"
+        show_number_sentence: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.2
+        count: 10
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging kindergarten teacher helping with addition to 10.
+      Help children add larger numbers using fingers, objects, or pictures.
+      Introduce simple number sentences like "3 + 4 = 7"
+      Use fun, relatable examples: "3 crayons plus 4 crayons equals 7 crayons!"
+      Encourage different strategies (counting on fingers, counting all objects).
+      Keep it positive and celebrate their growing skills!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

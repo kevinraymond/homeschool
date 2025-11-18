@@ -1,0 +1,10 @@
+unit:
+  id: math-g2-skip-counting-unit
+  title: "Skip Counting and Patterns"
+  grade: 2
+  subject: math
+  description: "Master skip counting by 2s, 5s, and 10s to prepare for multiplication"
+  lessons:
+    - math-g2-skip-1
+    - math-g2-skip-2
+  estimated_total_time: 40min

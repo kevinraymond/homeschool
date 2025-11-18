@@ -1,0 +1,59 @@
+lesson:
+  id: math-g1-sub-3
+  title: "Subtraction Word Problems"
+  grade: 1
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - subtraction_facts_to_20
+    - addition_word_problems
+
+  teaches:
+    - subtraction_word_problems
+    - compare_problems
+    - difference_concept
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-sub-3-intro.mp4"
+        transcript: "Let's solve subtraction story problems! Look for clue words like 'left', 'fewer', or 'difference'. Sometimes we subtract to compare - like finding out how many more books Sarah has than Tom."
+        subtitles: true
+
+    - type: interactive
+      component: "WordProblemSolver"
+      props:
+        problem_type: "subtraction"
+        max_numbers: 20
+        show_picture_helper: true
+        highlight_keywords: true
+        include_comparison: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.4
+        count: 8
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 1st grade teacher helping with subtraction word problems.
+      Help students identify subtraction situations.
+      Teach keywords: "left", "fewer", "how many more", "difference".
+      Explain comparison problems: "Sara has 12 stickers, Tom has 7. How many more does Sara have?"
+      Encourage drawing pictures to understand the problem.
+      Guide them step by step with simple language.
+      Make it relatable to their daily life!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

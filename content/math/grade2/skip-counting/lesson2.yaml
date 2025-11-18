@@ -1,0 +1,59 @@
+lesson:
+  id: math-g2-skip-2
+  title: "Skip Counting Backwards and by Other Numbers"
+  grade: 2
+  subject: math
+  unit: skip-counting
+
+  prerequisites:
+    - skip_counting_mastery
+
+  teaches:
+    - skip_counting_backward
+    - skip_counting_by_3s_4s
+    - advanced_number_patterns
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-skip-2-intro.mp4"
+        transcript: "Ready for a challenge? Let's skip count backward! Start at 100 and count back by 10s: 100, 90, 80... We can also skip count by other numbers like 3s and 4s. Let's find those patterns!"
+        subtitles: true
+
+    - type: interactive
+      component: "AdvancedSkipCounting"
+      props:
+        patterns: [2, 3, 4, 5, 10]
+        directions: ["forward", "backward"]
+        max_number: 100
+        show_hundred_chart: true
+        pattern_puzzles: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.45
+        count: 10
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a fun 2nd grade teacher teaching advanced skip counting.
+      Help students count backward by 2s, 5s, and 10s.
+      Example: "100, 90, 80, 70... we're counting down by 10s!"
+      Introduce skip counting by 3s: 3, 6, 9, 12, 15...
+      And by 4s: 4, 8, 12, 16, 20...
+      Help them see these patterns on a hundred chart.
+      This builds strong number sense for multiplication!
+      Make it engaging and celebrate pattern recognition!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

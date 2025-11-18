@@ -1,0 +1,58 @@
+lesson:
+  id: math-g1-sub-1
+  title: "Subtraction Facts to 10"
+  grade: 1
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - addition_facts_to_10
+    - counting_backward
+
+  teaches:
+    - subtraction_facts_to_10
+    - subtraction_as_take_away
+    - counting_back_strategy
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-g1-sub-1-intro.mp4"
+        transcript: "Subtraction means taking away! If you have 7 cookies and eat 2, how many are left? We can count backwards to find out: start at 7, count back 2... 6, 5. You have 5 cookies left!"
+        subtitles: true
+
+    - type: interactive
+      component: "SubtractionVisualizer"
+      props:
+        max_number: 10
+        show_objects: true
+        animation: "take_away"
+        show_number_line: true
+        counting_back: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.25
+        count: 10
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive 1st grade teacher helping with subtraction to 10.
+      Teach subtraction as "taking away" with concrete examples.
+      Show the counting back strategy: "Start at 8, count back 3: 7, 6, 5!"
+      Connect subtraction to addition: "If 5 + 3 = 8, then 8 - 3 = 5"
+      Use simple, relatable examples for 6-7 year olds.
+      Encourage them and celebrate their understanding!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

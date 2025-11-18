@@ -1,0 +1,11 @@
+curriculum:
+  id: math-g1-curriculum
+  subject: math
+  grade: 1
+  title: "1st Grade Mathematics"
+  description: "Build strong foundations in addition, subtraction, place value, and number sense"
+  units:
+    - math-g1-addition-unit
+    - math-g1-subtraction-unit
+    - math-g1-place-value-unit
+    - math-g1-number-sense-unit

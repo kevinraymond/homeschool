@@ -1,0 +1,59 @@
+lesson:
+  id: math-g1-pv-1
+  title: "Understanding Tens and Ones"
+  grade: 1
+  subject: math
+  unit: place-value
+
+  prerequisites:
+    - counting_to_20
+    - number_recognition_11_to_20
+
+  teaches:
+    - tens_and_ones
+    - grouping_by_tens
+    - place_value_understanding
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-pv-1-intro.mp4"
+        transcript: "Numbers have special places! In the number 23, the 2 means 2 tens (that's 20!) and the 3 means 3 ones. Let's learn to group objects by tens - it makes counting easier!"
+        subtitles: true
+
+    - type: interactive
+      component: "PlaceValueBlocks"
+      props:
+        max_number: 50
+        show_tens_rods: true
+        show_ones_cubes: true
+        grouping_activity: true
+        build_numbers: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.3
+        count: 8
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive 1st grade teacher teaching place value.
+      Help students understand that numbers are made of tens and ones.
+      Use base-ten blocks: "See how 10 ones make one group of ten?"
+      Example: "The number 34 has 3 tens (30) and 4 ones."
+      Make it visual and hands-on.
+      Connect to real life: "3 bags of 10 crayons plus 4 loose crayons = 34 crayons!"
+      Celebrate their understanding of this important concept!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

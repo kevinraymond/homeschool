@@ -1,0 +1,11 @@
+unit:
+  id: math-k-counting-unit
+  title: "Counting Adventures"
+  grade: 0
+  subject: math
+  description: "Learn to count from 1 to 20 with fun activities and games"
+  lessons:
+    - math-k-count-1
+    - math-k-count-2
+    - math-k-count-3
+  estimated_total_time: 60min

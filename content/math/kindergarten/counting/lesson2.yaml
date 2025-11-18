@@ -1,0 +1,57 @@
+lesson:
+  id: math-k-count-2
+  title: "Counting 11 to 20"
+  grade: 0
+  subject: math
+  unit: counting
+
+  prerequisites:
+    - counting_1_to_10
+
+  teaches:
+    - counting_11_to_20
+    - teen_numbers
+    - counting_forward
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-count-2-intro.mp4"
+        transcript: "Great job counting to 10! Now let's keep going all the way to 20. The numbers 11 through 19 are called 'teen' numbers. Let's practice them together!"
+        subtitles: true
+
+    - type: interactive
+      component: "CountingVisualizer"
+      props:
+        min: 11
+        max: 20
+        objects: ["flowers", "butterflies", "balloons"]
+        show_numbers: true
+        interactive_touch: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.15
+        count: 6
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient, encouraging kindergarten math helper.
+      Focus on helping children count from 11 to 20.
+      Explain that these are "teen" numbers in a fun way.
+      Use simple language and lots of positive reinforcement.
+      Examples: "Let's count flowers!" or "Can you count all the balloons?"
+      Keep it playful and supportive.
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

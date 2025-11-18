@@ -1,0 +1,58 @@
+lesson:
+  id: math-g2-sub-3
+  title: "Subtraction Word Problems"
+  grade: 2
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - two_digit_subtraction_with_regrouping
+
+  teaches:
+    - subtraction_word_problems_two_digit
+    - comparison_problems_advanced
+    - checking_with_addition
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-sub-3-intro.mp4"
+        transcript: "Let's solve subtraction story problems! Remember to read carefully and decide if you need to regroup. After solving, we can check our answer by adding - if subtraction is correct, adding should give us the starting number!"
+        subtitles: true
+
+    - type: interactive
+      component: "WordProblemSolver"
+      props:
+        problem_type: "subtraction"
+        max_numbers: 99
+        include_regrouping: true
+        comparison_problems: true
+        show_checking_strategy: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.55
+        count: 10
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging 2nd grade teacher.
+      Help students solve subtraction word problems.
+      Teach them to identify subtraction situations and check if regrouping is needed.
+      Example: "There were 64 students. 28 went home. How many are left?"
+      Guide: "This is 64 - 28. We'll need to regroup!"
+      Show how to check: "25 + 28 should equal 64!"
+      Make connections to real life and celebrate problem-solving!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

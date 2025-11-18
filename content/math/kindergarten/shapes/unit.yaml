@@ -1,0 +1,10 @@
+unit:
+  id: math-k-shapes-unit
+  title: "Shapes and Patterns"
+  grade: 0
+  subject: math
+  description: "Identify and describe basic 2D shapes and simple patterns"
+  lessons:
+    - math-k-shapes-1
+    - math-k-shapes-2
+  estimated_total_time: 40min

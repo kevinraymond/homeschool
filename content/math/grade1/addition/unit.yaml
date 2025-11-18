@@ -1,0 +1,11 @@
+unit:
+  id: math-g1-addition-unit
+  title: "Addition Facts"
+  grade: 1
+  subject: math
+  description: "Master addition within 20 with strategies and fluency"
+  lessons:
+    - math-g1-add-1
+    - math-g1-add-2
+    - math-g1-add-3
+  estimated_total_time: 60min

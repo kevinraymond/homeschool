@@ -1,0 +1,10 @@
+unit:
+  id: math-g1-number-sense-unit
+  title: "Number Sense"
+  grade: 1
+  subject: math
+  description: "Develop strong number sense with skip counting and number patterns"
+  lessons:
+    - math-g1-ns-1
+    - math-g1-ns-2
+  estimated_total_time: 40min

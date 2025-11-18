@@ -1,0 +1,57 @@
+lesson:
+  id: math-g1-sub-2
+  title: "Subtraction Facts to 20"
+  grade: 1
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - subtraction_facts_to_10
+    - addition_facts_to_20
+
+  teaches:
+    - subtraction_facts_to_20
+    - think_addition_strategy
+    - related_facts
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-sub-2-intro.mp4"
+        transcript: "Let's subtract bigger numbers - up to 20! Here's a smart trick: use addition to help! For 15 - 7, think 'what plus 7 equals 15?' The answer is 8! Addition and subtraction are like opposite partners."
+        subtitles: true
+
+    - type: interactive
+      component: "SubtractionStrategies"
+      props:
+        max_number: 20
+        strategies: ["think_addition", "counting_back", "number_line"]
+        show_fact_families: true
+        interactive_practice: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.35
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging 1st grade math teacher.
+      Help students subtract within 20 using the "think addition" strategy.
+      Teach fact families: "If 9 + 7 = 16, then 16 - 7 = 9 and 16 - 9 = 7"
+      Show how addition and subtraction are related.
+      Example: "For 14 - 6, think 'what plus 6 makes 14?' It's 8!"
+      Make connections clear and celebrate their strategies!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

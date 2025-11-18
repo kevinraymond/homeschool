@@ -1,0 +1,11 @@
+unit:
+  id: math-g1-subtraction-unit
+  title: "Subtraction Facts"
+  grade: 1
+  subject: math
+  description: "Master subtraction within 20 with strategies and fluency"
+  lessons:
+    - math-g1-sub-1
+    - math-g1-sub-2
+    - math-g1-sub-3
+  estimated_total_time: 60min

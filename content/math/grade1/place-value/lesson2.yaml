@@ -1,0 +1,59 @@
+lesson:
+  id: math-g1-pv-2
+  title: "Comparing Two-Digit Numbers"
+  grade: 1
+  subject: math
+  unit: place-value
+
+  prerequisites:
+    - tens_and_ones
+    - place_value_understanding
+
+  teaches:
+    - comparing_numbers
+    - greater_than_less_than
+    - using_symbols
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-pv-2-intro.mp4"
+        transcript: "Let's compare numbers! Which is bigger: 34 or 29? First, look at the tens place - that tells us a lot! We use special symbols: > means 'greater than' and < means 'less than'. The symbol always points to the smaller number!"
+        subtitles: true
+
+    - type: interactive
+      component: "NumberComparison"
+      props:
+        max_number: 99
+        show_place_value_blocks: true
+        show_symbols: true
+        alligator_helper: true
+        interactive_sorting: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.35
+        count: 10
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging 1st grade teacher teaching number comparison.
+      Help students compare two-digit numbers by looking at tens first.
+      Teach the symbols: > (greater than) and < (less than).
+      Use the "alligator" trick: "The alligator eats the bigger number!"
+      Example: "Compare 47 and 52. Look at tens: 4 tens vs 5 tens. 52 is bigger!"
+      Make it fun and visual.
+      Celebrate when they use place value to compare!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

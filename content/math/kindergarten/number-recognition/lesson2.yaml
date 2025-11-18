@@ -1,0 +1,57 @@
+lesson:
+  id: math-k-numrec-2
+  title: "Recognizing Numbers 11-20"
+  grade: 0
+  subject: math
+  unit: number-recognition
+
+  prerequisites:
+    - counting_11_to_20
+    - number_recognition_0_to_10
+
+  teaches:
+    - number_recognition_11_to_20
+    - teen_number_patterns
+    - two_digit_awareness
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-numrec-2-intro.mp4"
+        transcript: "Let's learn the teen numbers! Notice that many of them start with a 1? That's because they all have one group of ten plus some more. Cool, right?"
+        subtitles: true
+
+    - type: interactive
+      component: "NumberMatchingGame"
+      props:
+        range: [11, 20]
+        show_dots: true
+        show_ten_frames: true
+        drag_and_drop: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.2
+        count: 8
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive kindergarten teacher helping with teen numbers.
+      Help children recognize numbers 11-20 and see the pattern (they start with 1).
+      Use ten frames to show one full group of 10 plus extras.
+      Keep language simple and encouraging.
+      Example: "See the 1 and 5? That makes 15 - one ten and five more!"
+      Celebrate their recognition skills!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

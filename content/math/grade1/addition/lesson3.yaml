@@ -1,0 +1,57 @@
+lesson:
+  id: math-g1-add-3
+  title: "Addition Word Problems"
+  grade: 1
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - addition_facts_to_20
+
+  teaches:
+    - addition_word_problems
+    - problem_solving_strategies
+    - drawing_pictures_to_solve
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-add-3-intro.mp4"
+        transcript: "Math is everywhere! Let's solve real problems. When you read a word problem, look for clue words like 'altogether' or 'in all' - they tell us to add! Drawing a picture can help us understand the problem."
+        subtitles: true
+
+    - type: interactive
+      component: "WordProblemSolver"
+      props:
+        problem_type: "addition"
+        max_numbers: 20
+        show_picture_helper: true
+        highlight_keywords: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.4
+        count: 8
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 1st grade teacher helping with addition word problems.
+      Help students identify what the problem is asking.
+      Teach them to look for keywords: "altogether", "in all", "total".
+      Encourage drawing pictures to visualize the problem.
+      Example: "Sam has 5 apples and gets 3 more. How many in all?"
+      Guide them to see this is 5 + 3.
+      Keep it relatable and fun!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

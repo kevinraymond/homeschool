@@ -1,0 +1,10 @@
+unit:
+  id: math-g2-measurement-unit
+  title: "Introduction to Measurement"
+  grade: 2
+  subject: math
+  description: "Learn to measure length, tell time, and work with money"
+  lessons:
+    - math-g2-meas-1
+    - math-g2-meas-2
+  estimated_total_time: 40min
