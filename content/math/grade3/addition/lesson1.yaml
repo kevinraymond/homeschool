@@ -1,0 +1,56 @@
+lesson:
+  id: math-g3-add-1
+  title: "Addition with Regrouping"
+  grade: 3
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - single_digit_addition
+    - place_value_tens_ones
+
+  teaches:
+    - addition_with_regrouping
+    - carrying_tens
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-g3-add-1-intro.mp4"
+        transcript: "Today we're learning about addition with regrouping. When we add numbers and get more than 9 in a column, we need to carry to the next place value."
+        subtitles: true
+
+    - type: interactive
+      component: "RegroupingVisualizer"
+      props:
+        example_problem:
+          a: 27
+          b: 15
+        show_blocks: true
+        show_explanation: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.4
+        count: 5
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient, encouraging 3rd grade math tutor.
+      Help students understand addition with regrouping using the Socratic method.
+      Never give direct answers - guide with questions.
+      Use simple language appropriate for 8-9 year olds.
+      Relate to real-world examples when possible (pizza slices, toy cars, etc.).
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

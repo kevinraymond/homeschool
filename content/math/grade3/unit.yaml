@@ -1,0 +1,10 @@
+unit:
+  id: math-g3-addition-unit
+  title: "Addition Mastery"
+  grade: 3
+  subject: math
+  description: "Master addition with regrouping and multi-digit addition"
+  lessons:
+    - math-g3-add-1
+    - math-g3-add-2
+  estimated_total_time: 45min

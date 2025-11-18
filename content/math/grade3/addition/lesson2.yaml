@@ -1,0 +1,51 @@
+lesson:
+  id: math-g3-add-2
+  title: "Multi-Digit Addition"
+  grade: 3
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - addition_with_regrouping
+    - place_value_hundreds
+
+  teaches:
+    - three_digit_addition
+    - multiple_regrouping
+
+  estimated_time: 25min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g3-add-2-intro.mp4"
+        transcript: "Now we'll practice adding three-digit numbers. Sometimes we need to regroup more than once!"
+        subtitles: true
+
+    - type: interactive
+      component: "PlaceValueBuilder"
+      props:
+        max_digits: 3
+        show_regrouping: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.6
+        count: 7
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 3rd grade math tutor helping with three-digit addition.
+      Focus on place value understanding - ones, tens, hundreds.
+      When students struggle, break down the problem column by column.
+      Use encouraging language and celebrate small victories.
+    socratic_mode: true
+    max_hints: 3

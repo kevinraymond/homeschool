@@ -1,0 +1,12 @@
+curriculum:
+  id: math-g3-curriculum
+  subject: math
+  grade: 3
+  title: "3rd Grade Mathematics"
+  description: "Complete 3rd grade math curriculum covering addition, subtraction, multiplication, division, and fractions"
+  units:
+    - math-g3-addition-unit
+    - math-g3-subtraction-unit
+    - math-g3-multiplication-unit
+    - math-g3-division-unit
+    - math-g3-fractions-unit
