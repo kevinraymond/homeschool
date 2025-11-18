@@ -1,0 +1,59 @@
+lesson:
+  id: math-g1-ns-2
+  title: "Even and Odd Numbers"
+  grade: 1
+  subject: math
+  unit: number-sense
+
+  prerequisites:
+    - skip_counting_2s
+    - counting_to_20
+
+  teaches:
+    - even_numbers
+    - odd_numbers
+    - pairing_concept
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-ns-2-intro.mp4"
+        transcript: "Numbers can be even or odd! Even numbers can be split into pairs with no leftovers, like 8 shoes make 4 pairs. Odd numbers have one left over, like 7 shoes make 3 pairs plus 1 extra. Let's explore!"
+        subtitles: true
+
+    - type: interactive
+      component: "EvenOddExplorer"
+      props:
+        max_number: 20
+        show_pairing: true
+        show_objects: true
+        drag_to_pairs: true
+        highlight_pattern: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.3
+        count: 10
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a fun 1st grade teacher teaching even and odd numbers.
+      Help students understand pairing: "Can you make pairs with no leftovers?"
+      Teach the pattern: even numbers end in 0, 2, 4, 6, 8.
+      Odd numbers end in 1, 3, 5, 7, 9.
+      Use real examples: "10 fingers make 5 pairs - that's even!"
+      Make it hands-on and visual.
+      Celebrate when they identify even and odd!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

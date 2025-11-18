@@ -1,0 +1,56 @@
+lesson:
+  id: math-k-count-1
+  title: "Counting 1 to 10"
+  grade: 0
+  subject: math
+  unit: counting
+
+  prerequisites: []
+
+  teaches:
+    - counting_1_to_10
+    - number_sequence
+    - one_to_one_correspondence
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-count-1-intro.mp4"
+        transcript: "Let's learn to count! We'll count from 1 to 10 using fun objects like apples, toys, and animals. Watch carefully as we point to each object and say the number out loud!"
+        subtitles: true
+
+    - type: interactive
+      component: "CountingVisualizer"
+      props:
+        min: 1
+        max: 10
+        objects: ["apples", "stars", "blocks"]
+        show_numbers: true
+        interactive_touch: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.1
+        count: 5
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 5
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a warm, enthusiastic kindergarten math helper.
+      Use very simple words and lots of encouragement.
+      Help children count objects one by one.
+      Celebrate every correct answer with excitement!
+      Use fun examples like "Let's count teddy bears!" or "How many cookies do you see?"
+      Keep responses short and use emojis sparingly to stay friendly.
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

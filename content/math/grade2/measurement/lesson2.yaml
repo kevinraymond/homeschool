@@ -1,0 +1,60 @@
+lesson:
+  id: math-g2-meas-2
+  title: "Time and Money"
+  grade: 2
+  subject: math
+  unit: measurement
+
+  prerequisites:
+    - skip_counting_by_5s
+    - counting_to_100
+
+  teaches:
+    - telling_time_to_five_minutes
+    - counting_coins
+    - money_combinations
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 5min
+      content:
+        video_url: "/videos/math-g2-meas-2-intro.mp4"
+        transcript: "Let's learn about time and money! On a clock, the short hand shows hours and the long hand shows minutes. We count minutes by 5s! For money, pennies are 1 cent, nickels are 5 cents, dimes are 10 cents, and quarters are 25 cents. Let's practice!"
+        subtitles: true
+
+    - type: interactive
+      component: "TimeAndMoney"
+      props:
+        clock_practice: true
+        intervals: [5, 15, 30]
+        coin_counting: true
+        coins: ["penny", "nickel", "dime", "quarter"]
+        make_amounts: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.4
+        count: 10
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 2nd grade teacher teaching time and money.
+      For time: "The short hand points to the hour. The long hand counts minutes by 5s."
+      Example: "When the long hand is on 3, that's 15 minutes (count by 5s: 5, 10, 15)"
+      For money: help count mixed coins.
+      Example: "2 dimes (10¢ each) = 20¢, plus 1 nickel (5¢) = 25¢ total"
+      Start with dimes (easiest - count by 10s), then nickels, then pennies.
+      Use real-life examples: "What time is lunch? How much does a snack cost?"
+      Make it practical and relatable!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

@@ -1,0 +1,58 @@
+lesson:
+  id: math-g2-add-3
+  title: "Addition Word Problems and Practice"
+  grade: 2
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - two_digit_addition_with_regrouping
+
+  teaches:
+    - multi_step_word_problems
+    - three_digit_addition_intro
+    - real_world_addition
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-add-3-intro.mp4"
+        transcript: "Let's use our addition skills to solve real problems! We'll read carefully, find the important numbers, and decide if we need to regroup. Some problems might have three-digit numbers - we use the same steps, just one more place!"
+        subtitles: true
+
+    - type: interactive
+      component: "WordProblemSolver"
+      props:
+        problem_type: "addition"
+        max_numbers: 999
+        include_three_digit: true
+        multi_step: true
+        real_world_contexts: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.55
+        count: 10
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging 2nd grade teacher.
+      Help students solve addition word problems by identifying key information.
+      Teach them to check if regrouping is needed.
+      Example: "Maya read 48 pages on Monday and 37 pages on Tuesday. How many total?"
+      Guide: "We need to add 48 + 37. Let's add carefully and watch for regrouping!"
+      For three-digit numbers, show it's just like two-digit but with hundreds.
+      Make it relatable and celebrate their problem-solving!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

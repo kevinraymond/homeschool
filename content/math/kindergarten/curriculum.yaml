@@ -1,0 +1,11 @@
+curriculum:
+  id: math-k-curriculum
+  subject: math
+  grade: 0
+  title: "Kindergarten Mathematics"
+  description: "Foundational math skills including counting, number recognition, basic addition, and shape identification"
+  units:
+    - math-k-counting-unit
+    - math-k-number-recognition-unit
+    - math-k-basic-addition-unit
+    - math-k-shapes-unit

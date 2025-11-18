@@ -1,0 +1,58 @@
+lesson:
+  id: math-g2-add-2
+  title: "Two-Digit Addition (With Regrouping)"
+  grade: 2
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - two_digit_addition_no_regrouping
+    - tens_and_ones
+
+  teaches:
+    - two_digit_addition_with_regrouping
+    - carrying_to_tens_place
+    - regrouping_understanding
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 5min
+      content:
+        video_url: "/videos/math-g2-add-2-intro.mp4"
+        transcript: "Sometimes when we add, we get more than 9 in the ones place - that means we need to regroup! For 28 + 17, add ones: 8 + 7 = 15. That's 1 ten and 5 ones. Write the 5 and carry the 1 ten. Then add tens: 1 + 2 + 1 = 4. Answer: 45!"
+        subtitles: true
+
+    - type: interactive
+      component: "RegroupingVisualizer"
+      props:
+        max_number: 99
+        show_regrouping_animation: true
+        show_base_ten_blocks: true
+        show_carry_over: true
+        step_by_step: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.5
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 2nd grade teacher helping with regrouping.
+      Explain that 10 ones = 1 ten, so we "trade up" or "carry" to the tens place.
+      Example: "For 36 + 28, ones: 6 + 8 = 14. Write 4, carry 1 ten. Tens: 1 + 3 + 2 = 6. Answer: 64"
+      Use base-ten blocks to show trading 10 ones for 1 ten rod.
+      Remind them to write the small "carry" number above.
+      This is a big skill - encourage and celebrate understanding!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

@@ -1,0 +1,60 @@
+lesson:
+  id: math-g2-sub-1
+  title: "Two-Digit Subtraction (No Regrouping)"
+  grade: 2
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - subtraction_facts_to_20
+    - tens_and_ones
+    - place_value_understanding
+
+  teaches:
+    - two_digit_subtraction_no_regrouping
+    - subtracting_by_place_value
+    - column_subtraction
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-sub-1-intro.mp4"
+        transcript: "Let's subtract two-digit numbers! Just like addition, we subtract by place value. For 58 - 23, start with ones: 8 - 3 = 5. Then tens: 50 - 20 = 30. Put them together: 35!"
+        subtitles: true
+
+    - type: interactive
+      component: "PlaceValueSubtraction"
+      props:
+        max_number: 99
+        regrouping: false
+        show_place_value_chart: true
+        show_base_ten_blocks: true
+        step_by_step: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.35
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive 2nd grade math teacher.
+      Help students subtract two-digit numbers without regrouping.
+      Emphasize subtracting by place value: ones column, then tens column.
+      Example: "For 67 - 42, subtract ones: 7 - 2 = 5, then tens: 60 - 40 = 20. Answer: 25"
+      Use place value charts and base-ten blocks to visualize.
+      Encourage careful column alignment.
+      Celebrate their progress with bigger numbers!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

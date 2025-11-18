@@ -1,0 +1,57 @@
+lesson:
+  id: math-k-shapes-2
+  title: "More Shapes and Patterns"
+  grade: 0
+  subject: math
+  unit: shapes
+
+  prerequisites:
+    - circle_square_triangle
+    - shape_recognition
+
+  teaches:
+    - rectangle_hexagon
+    - shape_patterns
+    - pattern_extension
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-shapes-2-intro.mp4"
+        transcript: "Let's learn more shapes! A rectangle is like a stretched square. A hexagon has 6 sides like a honeycomb! We can also make patterns with shapes - like circle, square, circle, square. What comes next?"
+        subtitles: true
+
+    - type: interactive
+      component: "ShapePatternBuilder"
+      props:
+        shapes: ["circle", "square", "triangle", "rectangle", "hexagon"]
+        pattern_mode: true
+        create_patterns: true
+        identify_patterns: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.2
+        count: 6
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 5
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an enthusiastic kindergarten teacher teaching shapes and patterns.
+      Help children learn rectangles and hexagons.
+      Teach pattern recognition: "What comes next in this pattern?"
+      Use fun examples: "Hexagons are like bee homes!"
+      Keep it simple and visual.
+      Celebrate when they extend patterns correctly!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

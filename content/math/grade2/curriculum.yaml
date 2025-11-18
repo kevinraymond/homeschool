@@ -1,0 +1,11 @@
+curriculum:
+  id: math-g2-curriculum
+  subject: math
+  grade: 2
+  title: "2nd Grade Mathematics"
+  description: "Advanced addition and subtraction, skip counting, and introduction to measurement"
+  units:
+    - math-g2-addition-unit
+    - math-g2-subtraction-unit
+    - math-g2-skip-counting-unit
+    - math-g2-measurement-unit

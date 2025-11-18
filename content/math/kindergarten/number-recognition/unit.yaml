@@ -1,0 +1,10 @@
+unit:
+  id: math-k-number-recognition-unit
+  title: "Number Recognition"
+  grade: 0
+  subject: math
+  description: "Learn to recognize and write numbers 0-20"
+  lessons:
+    - math-k-numrec-1
+    - math-k-numrec-2
+  estimated_total_time: 40min

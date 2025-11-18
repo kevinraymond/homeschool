@@ -1,0 +1,10 @@
+unit:
+  id: math-k-basic-addition-unit
+  title: "Beginning Addition"
+  grade: 0
+  subject: math
+  description: "Introduction to adding numbers within 10 using objects and pictures"
+  lessons:
+    - math-k-add-1
+    - math-k-add-2
+  estimated_total_time: 40min

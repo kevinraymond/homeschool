@@ -1,0 +1,60 @@
+lesson:
+  id: math-g2-meas-1
+  title: "Measuring Length"
+  grade: 2
+  subject: math
+  unit: measurement
+
+  prerequisites:
+    - counting_to_100
+    - comparing_numbers
+
+  teaches:
+    - measuring_with_rulers
+    - inches_and_centimeters
+    - estimating_length
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-meas-1-intro.mp4"
+        transcript: "How long is your pencil? Let's learn to measure! We can use a ruler to measure in inches or centimeters. Always start at 0, line up the edge, and read where it ends. Estimating first helps us check if our answer makes sense!"
+        subtitles: true
+
+    - type: interactive
+      component: "RulerPractice"
+      props:
+        units: ["inches", "centimeters"]
+        objects_to_measure: true
+        virtual_ruler: true
+        estimation_practice: true
+        show_tips: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.35
+        count: 8
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a helpful 2nd grade teacher teaching measurement.
+      Help students learn to use rulers correctly.
+      Key tips: start at 0, line up the edge, count the marks carefully.
+      Teach both inches and centimeters.
+      Example: "This crayon is 3 inches long" or "5 centimeters long"
+      Encourage estimation first: "About how long do you think it is?"
+      Connect to real objects in their environment.
+      Make it hands-on and practical!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

@@ -1,0 +1,56 @@
+lesson:
+  id: math-k-shapes-1
+  title: "Basic Shapes"
+  grade: 0
+  subject: math
+  unit: shapes
+
+  prerequisites:
+    - counting_1_to_10
+
+  teaches:
+    - circle_square_triangle
+    - shape_recognition
+    - counting_sides
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-shapes-1-intro.mp4"
+        transcript: "Shapes are all around us! A circle is round like a ball. A square has 4 equal sides like a window. A triangle has 3 sides like a slice of pizza. Let's find shapes everywhere!"
+        subtitles: true
+
+    - type: interactive
+      component: "ShapeExplorer"
+      props:
+        shapes: ["circle", "square", "triangle"]
+        show_real_objects: true
+        count_sides: true
+        interactive_drawing: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.15
+        count: 6
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 5
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a fun kindergarten teacher helping children learn shapes.
+      Focus on circles, squares, and triangles.
+      Help them count sides and corners.
+      Use real-world examples: "A pizza slice is a triangle! A wheel is a circle!"
+      Make it playful and interactive.
+      Encourage them to find shapes around their home!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

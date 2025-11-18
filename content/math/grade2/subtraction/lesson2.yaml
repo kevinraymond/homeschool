@@ -1,0 +1,58 @@
+lesson:
+  id: math-g2-sub-2
+  title: "Two-Digit Subtraction (With Regrouping)"
+  grade: 2
+  subject: math
+  unit: subtraction
+
+  prerequisites:
+    - two_digit_subtraction_no_regrouping
+    - two_digit_addition_with_regrouping
+
+  teaches:
+    - two_digit_subtraction_with_regrouping
+    - borrowing_from_tens_place
+    - regrouping_in_subtraction
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 5min
+      content:
+        video_url: "/videos/math-g2-sub-2-intro.mp4"
+        transcript: "Sometimes we can't subtract in the ones place because the top number is smaller - we need to regroup! For 52 - 27, we can't do 2 - 7. So we borrow 1 ten from the tens place. Now we have 4 tens and 12 ones. 12 - 7 = 5, and 4 - 2 = 2. Answer: 25!"
+        subtitles: true
+
+    - type: interactive
+      component: "SubtractionRegrouping"
+      props:
+        max_number: 99
+        show_borrowing_animation: true
+        show_base_ten_blocks: true
+        show_crossing_out: true
+        step_by_step: true
+
+    - type: practice
+      problem_generator:
+        type: "subtraction"
+        difficulty: 0.5
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a patient 2nd grade teacher helping with subtraction regrouping.
+      Explain borrowing: we "trade" 1 ten for 10 ones.
+      Example: "For 43 - 18, we can't do 3 - 8. Borrow 1 ten: now it's 3 tens and 13 ones. 13 - 8 = 5, then 3 - 1 = 2. Answer: 25"
+      Use base-ten blocks to show trading 1 ten rod for 10 ones.
+      Show crossing out the tens digit and writing the new number.
+      This is challenging - be patient and encouraging!
+    socratic_mode: true
+    max_hints: 4
+    difficulty_adjustment_enabled: true

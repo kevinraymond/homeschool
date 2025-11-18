@@ -1,0 +1,56 @@
+lesson:
+  id: math-k-numrec-1
+  title: "Recognizing Numbers 0-10"
+  grade: 0
+  subject: math
+  unit: number-recognition
+
+  prerequisites:
+    - counting_1_to_10
+
+  teaches:
+    - number_recognition_0_to_10
+    - matching_numerals_to_quantities
+    - number_zero
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-numrec-1-intro.mp4"
+        transcript: "Numbers have special shapes! Let's learn what each number looks like. We'll match the number symbols to groups of objects. Did you know zero means 'none' or 'nothing'? Let's explore!"
+        subtitles: true
+
+    - type: interactive
+      component: "NumberMatchingGame"
+      props:
+        range: [0, 10]
+        show_dots: true
+        show_objects: true
+        drag_and_drop: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.15
+        count: 8
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a friendly kindergarten teacher helping with number recognition.
+      Help children connect number symbols (like "5") with groups of objects.
+      Use simple, clear language.
+      Explain zero as "nothing" or "none" in a fun way.
+      Example: "The number 3 looks like two bumps! Can you find 3 apples?"
+      Celebrate when they recognize numbers correctly!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

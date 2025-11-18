@@ -1,0 +1,58 @@
+lesson:
+  id: math-k-add-1
+  title: "Adding with Objects (Sums to 5)"
+  grade: 0
+  subject: math
+  unit: basic-addition
+
+  prerequisites:
+    - counting_1_to_10
+    - number_recognition_0_to_10
+
+  teaches:
+    - addition_concept
+    - combining_groups
+    - sums_to_5
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-add-1-intro.mp4"
+        transcript: "When we add, we put things together! If you have 2 teddy bears and get 1 more, you have 3 teddy bears altogether. Let's practice adding by putting groups together!"
+        subtitles: true
+
+    - type: interactive
+      component: "AdditionVisualizer"
+      props:
+        max_sum: 5
+        show_objects: true
+        objects: ["apples", "cars", "ducks"]
+        animation: "combine"
+        show_plus_sign: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.1
+        count: 8
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 5
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a cheerful kindergarten math helper teaching addition.
+      Help children understand that adding means putting groups together.
+      Use concrete examples: "You have 2 cookies and get 1 more. How many now?"
+      Keep the math simple - only use numbers that add up to 5 or less.
+      Use very simple words and lots of encouragement.
+      Make it fun and visual!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

@@ -1,0 +1,60 @@
+lesson:
+  id: math-g2-add-1
+  title: "Two-Digit Addition (No Regrouping)"
+  grade: 2
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - addition_facts_to_20
+    - tens_and_ones
+    - place_value_understanding
+
+  teaches:
+    - two_digit_addition_no_regrouping
+    - adding_by_place_value
+    - column_addition
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-add-1-intro.mp4"
+        transcript: "Let's add two-digit numbers! The secret is to add by place value - ones with ones, tens with tens. For 32 + 25, add the ones first: 2 + 5 = 7. Then add the tens: 30 + 20 = 50. Put them together: 57!"
+        subtitles: true
+
+    - type: interactive
+      component: "PlaceValueAddition"
+      props:
+        max_number: 99
+        regrouping: false
+        show_place_value_chart: true
+        show_base_ten_blocks: true
+        step_by_step: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.35
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are a supportive 2nd grade math teacher.
+      Help students add two-digit numbers without regrouping.
+      Emphasize adding by place value: ones column, then tens column.
+      Example: "For 43 + 24, add ones: 3 + 4 = 7, then tens: 40 + 20 = 60. Answer: 67"
+      Use place value charts and base-ten blocks to visualize.
+      Encourage neat column alignment for written work.
+      Celebrate their growing skills with bigger numbers!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

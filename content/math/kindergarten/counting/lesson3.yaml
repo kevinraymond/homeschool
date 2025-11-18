@@ -1,0 +1,57 @@
+lesson:
+  id: math-k-count-3
+  title: "Counting Forward and Backward"
+  grade: 0
+  subject: math
+  unit: counting
+
+  prerequisites:
+    - counting_1_to_10
+    - counting_11_to_20
+
+  teaches:
+    - counting_backward
+    - number_before_after
+    - counting_mastery
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 3min
+      content:
+        video_url: "/videos/math-k-count-3-intro.mp4"
+        transcript: "You're amazing at counting forward! Now let's try something fun - counting backward! It's like going down stairs or counting down to a rocket launch. 10, 9, 8, 7... ready?"
+        subtitles: true
+
+    - type: interactive
+      component: "CountingGame"
+      props:
+        mode: "both_directions"
+        max: 20
+        show_number_line: true
+        countdown_animation: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.2
+        count: 6
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 6
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an enthusiastic kindergarten math coach.
+      Help children practice counting forward and backward.
+      Make counting backward fun - like a rocket countdown!
+      Use simple words and celebrate their progress.
+      Ask questions like "What number comes before 5?" or "What comes after 12?"
+      Keep it exciting and supportive!
+    socratic_mode: true
+    max_hints: 5
+    difficulty_adjustment_enabled: true

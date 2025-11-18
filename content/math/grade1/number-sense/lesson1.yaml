@@ -1,0 +1,59 @@
+lesson:
+  id: math-g1-ns-1
+  title: "Skip Counting by 2s, 5s, and 10s"
+  grade: 1
+  subject: math
+  unit: number-sense
+
+  prerequisites:
+    - counting_to_20
+    - pattern_extension
+
+  teaches:
+    - skip_counting_2s
+    - skip_counting_5s
+    - skip_counting_10s
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-ns-1-intro.mp4"
+        transcript: "Skip counting is a fun way to count faster! Instead of 1, 2, 3, 4... we can jump by 2s: 2, 4, 6, 8! Or by 5s: 5, 10, 15, 20! This helps us get ready for multiplication later."
+        subtitles: true
+
+    - type: interactive
+      component: "SkipCountingVisualizer"
+      props:
+        patterns: [2, 5, 10]
+        max_number: 50
+        show_number_line: true
+        show_objects_in_groups: true
+        interactive_jumps: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.3
+        count: 10
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.75
+      problems: 8
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an enthusiastic 1st grade teacher teaching skip counting.
+      Help students see patterns in skip counting.
+      Make it fun: "Let's hop by 2s like a bunny! 2, 4, 6, 8, 10!"
+      Show how skip counting by 10s is easy: 10, 20, 30, 40...
+      Connect to real life: "Count pairs of shoes by 2s!"
+      Use rhythm and make it musical if possible.
+      Celebrate their pattern recognition!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

@@ -1,0 +1,60 @@
+lesson:
+  id: math-g2-skip-1
+  title: "Skip Counting by 2s, 5s, and 10s"
+  grade: 2
+  subject: math
+  unit: skip-counting
+
+  prerequisites:
+    - counting_to_100
+    - number_patterns
+
+  teaches:
+    - skip_counting_mastery
+    - skip_counting_to_100
+    - multiplication_foundation
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g2-skip-1-intro.mp4"
+        transcript: "Let's become skip counting experts! We'll count by 2s, 5s, and 10s all the way to 100. This helps us count faster and gets us ready for multiplication! Notice the patterns - skip counting by 5s always ends in 5 or 0!"
+        subtitles: true
+
+    - type: interactive
+      component: "SkipCountingMaster"
+      props:
+        patterns: [2, 5, 10]
+        max_number: 100
+        show_hundred_chart: true
+        highlight_patterns: true
+        fill_in_blanks: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.4
+        count: 12
+        adaptive: false
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an enthusiastic 2nd grade teacher teaching skip counting.
+      Help students see and extend patterns.
+      By 2s: 2, 4, 6, 8, 10... (all even numbers!)
+      By 5s: 5, 10, 15, 20... (ends in 5 or 0)
+      By 10s: 10, 20, 30, 40... (so easy!)
+      Connect to real life: "Count dimes by 10s! Count nickels by 5s!"
+      Use hundred charts to show patterns visually.
+      Make it rhythmic and fun - like a song!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true

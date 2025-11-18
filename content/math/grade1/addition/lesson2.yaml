@@ -1,0 +1,57 @@
+lesson:
+  id: math-g1-add-2
+  title: "Addition Facts to 20"
+  grade: 1
+  subject: math
+  unit: addition
+
+  prerequisites:
+    - addition_facts_to_10
+    - counting_on_strategy
+
+  teaches:
+    - addition_facts_to_20
+    - making_ten_strategy
+    - doubles_plus_one
+
+  estimated_time: 20min
+
+  sections:
+    - type: video
+      duration: 4min
+      content:
+        video_url: "/videos/math-g1-add-2-intro.mp4"
+        transcript: "Ready for bigger numbers? We'll add all the way to 20! We'll use the 'make ten' strategy - it's like making groups of 10 to make adding easier. 8 + 5? Think: 8 + 2 = 10, then 10 + 3 = 13!"
+        subtitles: true
+
+    - type: interactive
+      component: "TenFrameAddition"
+      props:
+        max_sum: 20
+        show_ten_frames: true
+        highlight_making_ten: true
+        strategy_hints: true
+
+    - type: practice
+      problem_generator:
+        type: "addition"
+        difficulty: 0.35
+        count: 12
+        adaptive: true
+
+    - type: assessment
+      mastery_threshold: 0.8
+      problems: 10
+      ai_tutor_enabled: true
+
+  ai_tutor_config:
+    system_prompt: |
+      You are an encouraging 1st grade math teacher.
+      Help students add numbers to 20 using the "make ten" strategy.
+      Teach doubles (7+7=14) and doubles plus one (7+8=15).
+      Use ten frames to visualize making groups of 10.
+      Example: "For 9 + 4, let's make ten first: 9 + 1 = 10, then 10 + 3 = 13!"
+      Keep it clear and celebrate their progress!
+    socratic_mode: true
+    max_hints: 3
+    difficulty_adjustment_enabled: true
