@@ -1,245 +1,121 @@
-# Getting Started
+# Getting Started with Homeschool AI
+
+Welcome! This guide will get you up and running with the Homeschool AI platform in about 15 minutes.
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+Before you begin, make sure you have:
 
-- **Node.js 18+** installed
-- **pnpm** package manager (`npm install -g pnpm`)
-- **Expo CLI** (`npm install -g expo-cli`)
-- **Supabase account** (free tier at supabase.com)
-- **iOS Simulator** (Mac only) or **Android Emulator** or physical device
-- **AWS account** (optional, for cloud AI - free tier available)
+- **Node.js 18+** installed ([download](https://nodejs.org/))
+- **pnpm** package manager: `npm install -g pnpm`
+- **Expo Go app** on your phone ([iOS](https://apps.apple.com/app/expo-go/id982107779) | [Android](https://play.google.com/store/apps/details?id=host.exp.exponent))
+- **Ollama** for local AI (optional but recommended): [ollama.ai](https://ollama.ai)
 
-## Initial Setup
-
-### 1. Install Dependencies
+## Step 1: Clone & Install (2 minutes)
 
 ```bash
-# From project root
+# Clone the repository
+git clone https://github.com/your-username/homeschool-ai.git
+cd homeschool-ai
+
+# Install dependencies
 pnpm install
 ```
 
-This will install all dependencies for all packages and apps in the monorepo.
+## Step 2: Set Up Supabase (5 minutes)
 
-### 2. Set Up Supabase
+See the comprehensive guide at **docs/SUPABASE_SETUP.md** for detailed instructions.
 
-1. Create a new project at [supabase.com](https://supabase.com)
-2. Go to Project Settings → API
-3. Copy your project URL and anon key
-4. Run the database schema:
-   ```bash
-   # Copy the schema to Supabase SQL editor
-   cat packages/database/src/schema.sql
-   # Run it in Supabase Dashboard → SQL Editor
-   ```
+**Quick version:**
+1. Create account at [supabase.com](https://supabase.com)
+2. Create new project
+3. Run migration from `supabase/migrations/00001_initial_schema.sql`
+4. Copy API keys to `.env.local`
 
-### 3. Configure Environment Variables
+## Step 3: Configure Environment
 
 ```bash
-# Copy example env file
-cp .env.example .env
-
-# Edit .env with your credentials
-nano .env
+cd apps/mobile
+cp .env.example .env.local
 ```
 
-Required variables:
-```env
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your-anon-key-here
+Edit `.env.local`:
+```bash
+EXPO_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+EXPO_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
 ```
 
-Optional (for cloud AI):
-```env
-AWS_REGION=us-east-1
-AWS_ACCESS_KEY_ID=your-key
-AWS_SECRET_ACCESS_KEY=your-secret
-```
+## Step 4: Set Up Local AI (Optional)
 
-### 4. Start Development
+For privacy-first AI tutoring:
 
 ```bash
-# Start mobile app
+# Install Ollama
+curl -fsSL https://ollama.ai/install.sh | sh  # macOS/Linux
+
+# Start server
+ollama serve
+
+# Pull model (in new terminal)
+ollama pull llama3.2
+```
+
+## Step 5: Run the App
+
+```bash
 pnpm mobile
-
-# In a separate terminal, if you want web dashboard
-pnpm web
 ```
 
-### 5. Test on Device
+Scan the QR code with Expo Go app on your phone!
 
-**Using Expo Go (Easiest):**
-1. Install Expo Go app on your phone
-2. Scan QR code from terminal
-3. App will load on your device
+## Step 6: Create Account & Add Students
 
-**Using Simulators:**
-- iOS: Press `i` in terminal
-- Android: Press `a` in terminal
+1. Tap "Get Started Free"
+2. Create parent account
+3. Check email for confirmation
+4. Add students
+5. Start learning!
 
-## Project Structure
+---
 
+## Troubleshooting
+
+### Cannot connect to Supabase
+- Check `.env.local` is in `apps/mobile/`
+- Restart Expo: `pnpm mobile`
+
+### Local AI not working
+- Check Ollama is running: `curl http://localhost:11434/api/tags`
+- Install model: `ollama pull llama3.2`
+
+### App crashes
+```bash
+cd apps/mobile
+rm -rf node_modules
+pnpm install
+pnpm start --clear
 ```
-homeschool-ai/
-├── apps/
-│   ├── mobile/          # React Native app (Expo)
-│   │   ├── app/         # File-based routing (Expo Router)
-│   │   │   ├── index.tsx        # Welcome screen
-│   │   │   ├── (auth)/          # Auth flow
-│   │   │   └── (app)/           # Main app (after login)
-│   │   └── components/  # Reusable components
-│   └── web/             # Next.js dashboard (coming soon)
-├── packages/
-│   ├── database/        # Supabase client & schemas
-│   ├── curriculum/      # Lesson templates & loader
-│   ├── ai/              # AI tutoring (local + cloud)
-│   └── utils/           # Shared utilities
-└── content/
-    └── math/            # Math curriculum (YAML)
-```
+
+---
+
+## What's Included
+
+**Sample Curriculum:**
+- K-2: Counting, shapes, basic math
+- Grade 3: Multiplication, fractions
+
+**Features:**
+- Local AI tutoring (Ollama)
+- Multi-student support
+- Progress tracking
+- Offline-capable
+
+---
 
 ## Next Steps
 
-### Week 1: Core Features
+- **Add curriculum**: See `content/math/` for examples
+- **Customize AI**: Edit `packages/ai/src/prompts.ts`
+- **Build parent dashboard**: Coming soon!
 
-1. **Database Integration**
-   - Connect mobile app to Supabase
-   - Implement authentication
-   - Create student CRUD operations
-
-2. **First Lesson**
-   - Build lesson player component
-   - Implement swipeable cards
-   - Test with sample math lesson
-
-3. **AI Integration**
-   - Set up AWS Bedrock (cloud AI)
-   - Test hint generation
-   - Test answer feedback
-
-### Week 2: Student Interface
-
-1. **Lesson Player**
-   - Video section component
-   - Interactive section component
-   - Practice problems component
-   - Assessment component
-
-2. **Progress Tracking**
-   - Track session time
-   - Calculate accuracy
-   - Update progress nodes
-
-3. **AI Tutor**
-   - Hint system (3 levels)
-   - Feedback on answers
-   - Struggle detection
-
-### Week 3: Parent Dashboard
-
-1. **Multi-Child View**
-   - Family overview screen
-   - Individual child screens
-   - Today's progress summary
-
-2. **Analytics**
-   - Learning sessions chart
-   - Mastery levels visualization
-   - Time spent analytics
-
-3. **Insights**
-   - AI-generated family insights
-   - Cross-child pattern detection
-   - Recommendations
-
-## Development Tips
-
-### Hot Reload
-
-Expo supports hot reload - just save your files and see changes instantly on device.
-
-### Debugging
-
-```bash
-# Open React DevTools
-expo start --devtools
-
-# View logs
-expo start --clear
-```
-
-### TypeScript
-
-All files use TypeScript. Run type checking:
-
-```bash
-pnpm typecheck
-```
-
-### Linting
-
-```bash
-pnpm lint
-```
-
-### Database Changes
-
-When you update the schema:
-
-1. Update `packages/database/src/schema.sql`
-2. Run in Supabase SQL Editor
-3. Generate TypeScript types:
-   ```bash
-   cd packages/database
-   supabase gen types typescript --local > types/database.ts
-   ```
-
-## Common Issues
-
-### "Metro bundler couldn't start"
-
-```bash
-# Clear cache and restart
-cd apps/mobile
-expo start --clear
-```
-
-### "Module not found"
-
-```bash
-# Reinstall dependencies
-rm -rf node_modules
-pnpm install
-```
-
-### "Supabase connection failed"
-
-- Check your `.env` file has correct credentials
-- Verify Supabase project is running
-- Check network connection
-
-## Resources
-
-- **Expo Docs**: https://docs.expo.dev
-- **React Native**: https://reactnative.dev
-- **Supabase**: https://supabase.com/docs
-- **NativeWind**: https://www.nativewind.dev
-- **React Query**: https://tanstack.com/query
-
-## Need Help?
-
-- Check the `docs/` folder for detailed guides
-- Review example code in `content/math/`
-- Look at the implementation plan in research repo
-
-## Testing with Your Family
-
-Once the app is functional:
-
-1. **Add your 4 kids as students**
-2. **Have them try sample lessons**
-3. **Log bugs and feedback** in a notebook
-4. **Iterate quickly** - you have built-in user research!
-
-Your experience as a homeschool parent is your superpower. Trust your instincts on what works and what doesn't.
+Happy homeschooling! 🎓
